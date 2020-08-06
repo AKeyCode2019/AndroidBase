@@ -212,80 +212,48 @@ sidemenu-content:hover{
    width:100vw;
    height:100vh;
  }
- /*****博客园专用css*****/
- #mylinks{/**去掉头部链接***/
-   display:flex;
-   
- }
- #mylinks ul li{
-  list-style:none;
-}
-.menu{
-  font-size:18px;
-  color:Black;
-  text-decoration:none;
-}
-.post{
-  padding:5px 5px 5px 5px;
-  box-shadow:3px 1px 5px 1px Orange;
-  border-radius:5px; 
-  background-color:Orange;
-  border:solid 1px Orange;
-  margin:0px 10px 0px 10px;
-  
-  display:block;
-}
-.post.c_b_p_desc{
-  color:#000;
-  overflow:hidden;
-}
-
-.clear{
-  padding:5px 5px 5px 5px;
-  box-shadow:3px 1px 5px 1px Orange;
-  border-radius:5px; 
-  background-color:Orange;
-  border:solid 1px Orange;
-  margin:0px 10px 0px 10px;
-}
-
- .searchBlock{  
-        width: 110px;  
-        border:solid 1px Green;  
-        border-radius:10px;  
-        -webkit-border-radius: 10px;  
-        -moz-border-radius: 10px;  
-        -khtml-border-radius: 10px;  
-    }  
-      
-    .searchBlock span{  
-        float: left;  
-    }  
-    .searchText{  
-        border: none;  
-        width: 80px;  
-        margin: 2px 5px;  
-        outline: 0 none;  
-    }  
-    .searchBtn{  
-	outline:none;
-	border-radius:50px;  
-        border:none;  
-        width: 16px;  
-        height: 16px;  
-        cursor: pointer;  
-        background-image: url("images/ico_sear.gif");  
-        background-repeat: no-repeat;  
-        display: inline;  
-        margin: 2px 0px;  
-    }  
-	 .searchBtn:hover{
-	 background-color:Red;
-	 }
 </style>
+<script>
+function mClose(){
+	document.getElementById("sidenav-menu")
+	.style.width="0px";
+	document.getElementById("sidenav-menu").
+	style.marginLeft="0";
+	document.body.style.background="white";
+}
+function mOpen(){
+	document.getElementById("sidenav-menu")
+	.style.width="280px";
+	document.getElementById("sidenav-menu").
+	style.marginLeft="0";
+	document.body.style.background="rgb(0,2,0,0.5)";
+}
+function Tab(num)
+{
+    var i;
+    for(i=1;i<=3;i++)
+    {
+        if(i==num)
+           document.getElementById("page"+i).style.display="block";
+         else
+           document.getElementById("page"+i).style.display="none";
+    }
+}
 
 
-<title>箫 - 博客园</title>
+function loadnewpage(pages){
+	var j;
+    for(i=1;i<=4;i++)
+    {
+        if(i==pages){
+           document.getElementById("page"+i).style.display="block";
+		  } else{
+           document.getElementById("page"+i).style.display="none";
+    }
+	}
+}</script>
+
+<title>ytz'pages</title>
     <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.ico?v=20200522" type="image/x-icon" />
   </head>
   <body>
