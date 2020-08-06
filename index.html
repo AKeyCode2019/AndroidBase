@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="height=device-height,width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+	<meta name="theme-color" content="#212121">
+    <link href="css/styles.css" rel="stylesheet">
+	<script src="js/scripts.js"></script>
+	
+<style>
+html,body
+{
+  padding:0;
+  margin:0;
+  height:100vh;
+  width:100vw;
+  transition: background-color 0.5s;
+}
+#navigator{
+  box-shadow:0px 0px 5px black;
+  top:0;
+  position:fixed;
+  height:50px;
+  width:100%;
+  padding:0 10px;
+  background-color:#212121;
+  box-sizing:border-box;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  transition:0.5s;
+}
+#navigator ul{
+  left:50px;
+  align-items:center;
+  position:relative;
+  padding:0;
+  margin:0 10px 50px 10px;
+  display:flex;
+  bottom:5px;
+}
+#navigator ul li{
+  list-style:none;
+}
+.headNavMenu{
+  align-items:center;
+  color:#fff;
+  padding:0 10px;
+  margin:0 10px 0 10px;
+  font-size:1.0em;
+  background-color:transparent;
+  outline:none;
+  border:solid 0px transparent;
+  text-decoration:none;/**去除下划线**/
+}
+.headNavMenu:hover{
+  background-color:LightBlue;
+  color:#000;
+}
+
+#brand{
+  text-decoration:none;
+  font-size:2.0em;
+  font-weight:bold;
+}
+#sidenav-menu{
+  overflow-x:hidden;
+  z-index:1;
+  box-shadow:1px 2px 5px black;
+  position:fixed;
+  display:block;
+  height:100%;
+  width:0;
+  left:0;
+  overflow:hidden;
+  background-color:#eee;
+  height:100%;
+  top:0;
+  margin:0;
+  bottom:0;
+  transition:0.5s;
+}
+
+.sidemenu-content{
+  outline:none;
+  width:auto;
+  display:block;
+  margin:0px 20px 20px 50px;
+  background-color:transparent;
+  border:none;
+  color:Black;
+  font-size:18px;
+}
+#menu{
+  display:block;
+  position:relative;
+  transition:0.9s;
+}
+sidemenu-content:hover{
+  transform:translatex(0px);
+}
+.textcontent{
+  padding:0;
+  margin:0;
+}
+.textcontent li{
+  list-style:none;
+}
+.textcontent li a{
+  overflow-x:hidden;
+  display:block;
+  
+  font-size:1.0em;
+  text-decoration:none;/**去除下划线**/
+  padding: 0px 0px 8px 32px;
+  transition: 0.3s;
+  
+}
+.sidemenu-content:hover{
+    color:#999;
+}
+
+  #menu-container{
+	border:solid 0px transparent;
+	outline:none;
+	text-align:center;
+	background-color:transparent;
+	border-radius:0px;
+	height:28px;
+	width:35px;
+  }
+  .toggle-button{
+	width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 6px 0;
+  }
+  
+.sidemenu-container{
+  position:relative;
+	background-color:transparent;
+	top:20px;
+	left:15px;
+	height:28px;
+	font-size:21px;
+	display:block;
+	font-weight:bold;
+}
+.button-container{
+  list-style:none;
+  display:block;
+  position:relative-bottom;
+  margin-top:30px;
+}
+#buttonCustom1{
+  outline:none;
+  width:150px;
+  height:30px;
+  background-color:#2196f3;
+  border:solid 2px #2196f3;
+  border-radius:20px;
+  margin:5px 10px 5px 10px;
+  color:#fff;
+  }
+  #buttonCustom2{outline:none;
+  width:150px;
+  height:30px;
+  background-color:#fff;
+  border:solid 2px #2196f3;
+  border-radius:20px;
+  margin:5px 10px 5px 10px;
+  color:#2196f3;
+  }
+  #buttonCustom1:hover{
+	box-shadow:1px 1px 10px 1px #2196f3;
+  }
+  #buttonCustom2:hover{
+	box-shadow:1px 1px 10px 1px #2196f3;
+  }
+ .footer{
+   text-align:center;
+   font-size:11px;
+   display:block;
+   margin-top:50px;
+ }
+ .homepage{
+   background-color:Blue;
+   text-align:center;
+   display:block;
+   width:100vw;
+   height:100vh;
+ }
+ .productpage{
+   background-color:Cyan;
+   color:Blue;
+   text-align:center;
+   margin-top:150px;
+   display:none;
+   width:100vw;
+   height:100vh;
+ }
+ .aboutpage{
+   background-color:Coral;
+   color:Blue;
+   text-align:center;
+   margin-top:150px;
+   display:none;
+   width:100vw;
+   height:100vh;
+ }
+ /*****博客园专用css*****/
+ #mylinks{/**去掉头部链接***/
+   display:flex;
+   
+ }
+ #mylinks ul li{
+  list-style:none;
+}
+.menu{
+  font-size:18px;
+  color:Black;
+  text-decoration:none;
+}
+.post{
+  padding:5px 5px 5px 5px;
+  box-shadow:3px 1px 5px 1px Orange;
+  border-radius:5px; 
+  background-color:Orange;
+  border:solid 1px Orange;
+  margin:0px 10px 0px 10px;
+  
+  display:block;
+}
+.post.c_b_p_desc{
+  color:#000;
+  overflow:hidden;
+}
+
+.clear{
+  padding:5px 5px 5px 5px;
+  box-shadow:3px 1px 5px 1px Orange;
+  border-radius:5px; 
+  background-color:Orange;
+  border:solid 1px Orange;
+  margin:0px 10px 0px 10px;
+}
+
+ .searchBlock{  
+        width: 110px;  
+        border:solid 1px Green;  
+        border-radius:10px;  
+        -webkit-border-radius: 10px;  
+        -moz-border-radius: 10px;  
+        -khtml-border-radius: 10px;  
+    }  
+      
+    .searchBlock span{  
+        float: left;  
+    }  
+    .searchText{  
+        border: none;  
+        width: 80px;  
+        margin: 2px 5px;  
+        outline: 0 none;  
+    }  
+    .searchBtn{  
+	outline:none;
+	border-radius:50px;  
+        border:none;  
+        width: 16px;  
+        height: 16px;  
+        cursor: pointer;  
+        background-image: url("images/ico_sear.gif");  
+        background-repeat: no-repeat;  
+        display: inline;  
+        margin: 2px 0px;  
+    }  
+	 .searchBtn:hover{
+	 background-color:Red;
+	 }
+</style>
+
+
+<title>箫 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.ico?v=20200522" type="image/x-icon" />
+  </head>
+  <body>
+	<nav id="navigator">
+	  <div id="menu-container" class="mMenu">
+		<a href="javascript:void(0)"
+		  class="closebtn"></a>
+		<div class="toggle-button" onclick="mOpen()">
+		  <div class="toggle-button"></div>
+		  <div class="toggle-button"></div>
+		  <div class="toggle-button"></div>
+		  </div><!------>
+		<ul>
+		  <li><input class="headNavMenu" type="button" value="首页" onclick=Tab(1)></li>
+		  <li><input class="headNavMenu" type="button" value="新闻" onclick=Tab(2)></li>
+		  <li><input class="headNavMenu" type="button" value="关于" onclick=Tab(3)></li>
+		</ul>
+		  </div>
+	</nav>
+	<nav id="sidenav-menu">
+	  <div class="sidemenu-container" onclick="mClose()">
+		╳
+	  </div>
+	  <div id="mcontent">
+		<ul class="textcontent">
+		  <li style="margin-top:80px">
+		  <li><a href="#" target="_parent">
+			  <input class="sidemenu-content" type="button" value="友链" onclick="loadnewpage(1)">
+			</a></li>
+		  <li><a href="#" target="_parent">
+			  <input class="sidemenu-content" type="button" value="友链" onclick="loadnewpage(2)">
+			</a></li>
+		  <li><a href="#" target="_parent">
+			  <input class="sidemenu-content" type="button" value="友链" onclick="loadnewpage(3)">
+			</a></li>
+		  <li><a href="#" target="_parent">
+			  <input class="sidemenu-content" type="button" value="友链" onclick="loadnewpage(4)">
+			</a>
+			</li>
+		  <hr style="color:#2196f3;"/>
+		  <ul>
+			<li><span class="post-view-count">Read(46)</span><text> </text></li>
+			<li> <span class="post-comment-count">Commitment(0)</span><text> </text></li>
+			 <li> <span class="post-digg-count">Tui(0)</span><text> </text></li>
+		  </ul>
+		</ul>
+		<!--<ul class="button-container">
+		  <li><input id="buttonCustom1" type="button" value="登 录"></li>
+		  <li><input id="buttonCustom2" type="button"  value="注 册"></li>
+		</ul>-->
+	  </div>
+	</nav>
+	  <div id="page1" class="homepage">
+		<img src="img/bg.bmp"
+		  alt="hongqihuLake" style="background-repeat:no-repeat;
+		  width:100%;height:110px;margin-top:50px;
+		  background-attachment:fixed;" id="headBg">
+		
+		  
+		  
+		  
+	  </div>
+	  <div id="page2" class="productpage" style="display:none">
+		
+		
+		
+		
+		
+	  </div>
+	<div id="page3" class="aboutpage" style="display:none">
+		
+	  
+	  
+	  
+	  </div>
+	<div class="footer">Copyright &copy;2020ytz All Reserved</div>
+  </body>
+</html>		
